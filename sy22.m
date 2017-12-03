@@ -1,0 +1,12 @@
+ z1=[1,-3]';p1=[2,-4]';k=5;
+[b1,a1]=zp2tf(z1,p1,k);
+subplot(3,1,1),zplane(z1,p1);
+num=[4,-1.6,-1.6,4];
+den=[1,0.4,0.35,-0.4];
+subplot(3,1,3),zplane(num,den);
+num1=2;den1=[1,-1];
+num2=-1;den2=[1,-0.5];
+num3=1;den3=[1,0.5];
+[nump,denp]=parallel(num1,den1,num2,den2);
+[nump1,denp1]=parallel(nump,denp,num3,den3);
+subplot(3,1,3),zplane(nump1,denp1);
